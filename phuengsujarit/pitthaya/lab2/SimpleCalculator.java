@@ -2,11 +2,12 @@ package phuengsujarit.pitthaya.lab2;
 
 public class SimpleCalculator {
     public static void main(String[] args) {
+       /*definded  a and b to integer input*/
         int a = Integer.parseInt(args[0]);
         int b = Integer.parseInt(args[1]);
         
 
-    
+      /*Defined value and operator */
     if (args.length !=3){
         System.err.println("Error: Please provide exactly three arguments.");
     }
