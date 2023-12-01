@@ -24,7 +24,7 @@ public class PrimitiveDataType {
         System.out.println("Float value : " + floatvalue);
         System.out.println("Double value : " + doublevalue);
         System.out.println("Char value : " +charvalue);
-        System.out.println("Char value : " +booleanvalue);
+        System.out.println("Boolean value : " +booleanvalue);
 
         
     
