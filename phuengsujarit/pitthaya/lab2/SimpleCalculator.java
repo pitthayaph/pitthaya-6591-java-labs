@@ -8,20 +8,39 @@ public class SimpleCalculator {
 
     
     if (args.length !=3){
-        System.err.println("Please provide exactly three arguments.");
-
-        
+        System.err.println("Error: Please provide exactly three arguments.");
+    }
+         else if (args[2].equals("-")){
+            System.out.println(a+"-"+b+"="+(a-b));
+        }
+         else if (args[2].equals("x")){
+            System.out.println(a+"x"+b+"="+(a*b));
+        }
 
                
-        }else{
-            
-            
-            
-            
-            
-            System.out.println( a + b );
-            
+        else if (args[2].equals("+")){
+            System.out.println(a+"+"+b+"="+(a+b));
         }
+       else if (args[2].equals("/")){
+        if (b == 0)   {
+            System.out.println("Error: Devision by zero is not allowed.");
+        
+        }else{
+            System.out.println(a+"/"+b+"="+(a/b));
+        }
+    }
+       else if (!(args[2].equals("+") || args[2].equals("-") || args[2].equals("x") || args[2].equals("/") )){
+            
+            System.out.println("Error: Invalid operator. Please use '+','-','x' or '/'");
+        }
+        
     
+        
+        
+     }
 }
-}
+
+  
+        
+    
+
