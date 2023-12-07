@@ -2,8 +2,6 @@
 public class PrimitiveDataType {
    
     public static void main(String[] args) {
-        
-        /* SetValue*/ 
         String studentid= "663040659-1";
         String firstname = "Pitthaya";
         byte bytevalue = 91;
@@ -14,7 +12,7 @@ public class PrimitiveDataType {
         Double doublevalue = 0.30406591;
         Character charvalue = 'P';
         Boolean booleanvalue  = true;
-             /*Print output of value */
+
         System.out.println("Student ID : " + studentid);
         System.out.println("Firstname : "+ firstname);
         System.out.println("Byte value : " + bytevalue);
@@ -24,7 +22,7 @@ public class PrimitiveDataType {
         System.out.println("Float value : " + floatvalue);
         System.out.println("Double value : " + doublevalue);
         System.out.println("Char value : " +charvalue);
-        System.out.println("Boolean value : " +booleanvalue);
+        System.out.println("Char value : " +booleanvalue);
 
         
     

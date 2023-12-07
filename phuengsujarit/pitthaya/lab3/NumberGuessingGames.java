@@ -2,7 +2,7 @@ package phuengsujarit.pitthaya.lab3;
 
 import java.util.*;
 
-public class ConfigurableNumberGuessingGame {
+public class NumberGuessingGames {
    static int answer, min, max, numTries, maxTries; // define variable.
    static Scanner input = new Scanner(System.in); // define variable to get input.
 
@@ -11,16 +11,32 @@ public class ConfigurableNumberGuessingGame {
       configure();
       genAnswer();
       playgame();
+
    }
 
    public static void configure() { // define configure function to ask player for max value ,min value and maximum
                                     // number of tries.
       System.out.print("Enter the min value:");
       min = input.nextInt();
-      System.out.print("Enter the max value:");
-      max = input.nextInt();
-      System.out.print("Enter the maximum number of tries:");
-      maxTries = input.nextInt();
+      do { // check if max < min and ask player for a new max value.
+         System.out.print("Enter the max value:");
+         max = input.nextInt();
+         if (max < min) {
+            System.out.println("The max value must be at least equal to the min value");
+         }
+      } while (max < min);
+
+      do { // check if maximum number of tries <= 0 and ask player for a new maximum number
+           // of tries
+         System.out.print("Enter the maximum number of tries:");
+         maxTries = input.nextInt();
+         if (maxTries <= 0) {
+            System.out.println("The maximum number of tries must be greater than 0");
+         }
+      } while (maxTries <= 0);
+      {
+
+      }
 
    }
 
@@ -81,7 +97,13 @@ public class ConfigurableNumberGuessingGame {
             }
          }
       }
-      input.close();// clos scanner
+      System.out.print("Want to play again (Y or y):"); // ask player for play again
+      String playagaint = input.next();
+      playagaint = playagaint.toUpperCase(); // change y to Y
+      if (playagaint.equals("Y")) { // check if playagaint variable is Y lunch playgame function againt.
+         playgame();
+      }
+      input.close(); // close scanner
    }
 
 }
