@@ -106,7 +106,10 @@ public class NumberGuessingGames {
       playagaint = playagaint.toUpperCase(); // change y to Y
       if (playagaint.equals("Y")) { // check if playagaint variable is Y lunch playgame function againt.
          playgame();
-      }
+      }else {
+            System.out.println("Thank you for playing our games. Bye!");
+         }
+      input.close(); // close scanner
       input.close(); // close scanner
    }
 
