@@ -35,7 +35,7 @@ public class NumberGuessingGames {
          }
       } while (maxTries <= 0);
       {
-
+          
       }
 
    }
@@ -46,12 +46,16 @@ public class NumberGuessingGames {
 
    public static void playgame() { // define playgame function.
       Math.random();
+      int guessing;
       System.out.println("Welcome to a number guessing game!");
 
       int numTries = 1;
       while (numTries < maxTries + 1) { // the game will lunch while numTries < maxTries .
-         System.out.print("Enter an integer between " + min + "and" + max + ":");
-         int guessing = input.nextInt();
+         do{System.out.print("Enter an integer between " + min + "and" + max + ":");
+         guessing = input.nextInt();
+         if (guessing < min || guessing > max )
+         System.out.println("The number must me between" +min+"and" +max);
+      }while (guessing < min || guessing > max  );
 
          if (guessing == answer) { // check if player's answer is correct.
             System.out.println("Congratulations!");
