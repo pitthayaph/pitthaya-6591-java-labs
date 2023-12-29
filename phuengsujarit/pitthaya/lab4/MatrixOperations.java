@@ -56,7 +56,7 @@ public class MatrixOperations {
 
         matrix = new int[rows][columns];
 
-        for (int i = 0; i < rows; i++) {
+        for (int i = 0; i < rows; i++) {  // store user input to matrix
             for (int j = 0; j < columns; j++) {
                 System.out.print("Enter element [" + i + "]" + "[" + j + "]: ");
                 matrix[i][j] = scanner.nextInt();
@@ -73,7 +73,7 @@ public class MatrixOperations {
         initializeMatrix();
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                matrix[i][j] = (int) (Math.random() * 10); // Random number between 0 and 9
+                matrix[i][j] = (int) (Math.random() * 10); // Random number between 0 and 9 and store it to matrix
             }
         }
         displayMatrix();
@@ -95,7 +95,7 @@ public class MatrixOperations {
         columns = scanner.nextInt();
         initializeMatrix();
         for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
+            for (int j = 0; j < columns; j++) { // store 1 until matrix is full
                 matrix[i][j] = 1;
             }
         }
@@ -160,7 +160,7 @@ public class MatrixOperations {
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                transposedMatrix[j][i] = matrix[i][j];
+                transposedMatrix[j][i] = matrix[i][j]; // change row to column and column to row
             }
         }
 
@@ -183,38 +183,38 @@ public class MatrixOperations {
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                rowSums[i] += matrix[i][j];
-                columnSums[j] += matrix[i][j];
+                rowSums[i] += matrix[i][j]; // calculate sum of rows
+                columnSums[j] += matrix[i][j]; // calculate sum of column
             }
         }
 
         System.out.println("Row Sums:");
         for (int i = 0; i < rows; i++) {
-            System.out.println("Row " + (i + 1) + ": " + rowSums[i]);
+            System.out.println("Row " + (i + 1) + ": " + rowSums[i]); //show sum of all rows
         }
 
         System.out.println("Column Sums:");
         for (int j = 0; j < columns; j++) {
-            System.out.println("Column " + (j + 1) + ": " + columnSums[j]);
+            System.out.println("Column " + (j + 1) + ": " + columnSums[j]); //show sum of all columns
         }
     }
 
     private static void findMinAndMaxElements() { // show minimum and maximum value
-        int minElement = matrix[0][0];
-        int maxElement = matrix[0][0];
+        int minvalue = matrix[0][0];
+        int maxvalue = matrix[0][0];
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                if (matrix[i][j] < minElement) {
-                    minElement = matrix[i][j];
+                if (matrix[i][j] < minvalue) { //find min value
+                    minvalue = matrix[i][j]; 
                 }
-                if (matrix[i][j] > maxElement) {
-                    maxElement = matrix[i][j];
+                if (matrix[i][j] > maxvalue) { // find max value
+                    maxvalue = matrix[i][j];
                 }
             }
         }
-        System.out.println("Maximum Value: " + maxElement);
-        System.out.println("Minimum Value: " + minElement);
+        System.out.println("Maximum Value: " + maxvalue);
+        System.out.println("Minimum Value: " + minvalue);
 
     }
 
