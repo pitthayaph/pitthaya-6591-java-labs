@@ -10,7 +10,7 @@ public class PlayerFormV1 extends MySimpleWindow {
     protected JTextField nameField, nationField, birthDateField;
     protected JPanel toPanel, bottomPanel;
     
-    PlayerFormV1 (String title){  //create constructors.
+    public PlayerFormV1 (String title){  //create constructors.
         super(title);
         maleRadio = new JRadioButton("Male");        //create components.
         femaleRadio = new JRadioButton("Female:");

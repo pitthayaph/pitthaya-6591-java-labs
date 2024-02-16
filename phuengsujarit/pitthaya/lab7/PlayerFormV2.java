@@ -6,15 +6,15 @@ import javax.swing.*;
 
 public class PlayerFormV2 extends PlayerFormV1 {
 
-    JLabel playerLabel, noteLabel, typespace;
-    String[] playerTypes = {"Beginner", "Amateur", "Professional"};
-    JComboBox<String> typesCombo;
-    JTextArea textArea;
-    JLabel typeLabel;
-    JPanel newtoPanel, newbottomPanel, tyPanel, notePanel;
-    JScrollPane scrollPane;
+    protected JLabel playerLabel, noteLabel, typespace;
+    protected String[] playerTypes = {"Beginner", "Amateur", "Professional"};
+    protected JComboBox<String> typesCombo;
+    protected JTextArea textArea;
+    protected JLabel typeLabel;
+    protected JPanel newtoPanel, newbottomPanel, tyPanel, notePanel;
+    protected JScrollPane scrollPane;
 
-    PlayerFormV2(String title) { //create constructors.
+   public PlayerFormV2(String title) { //create constructors.
         super(title);
         newtoPanel = new JPanel();  //create components.
         tyPanel = new JPanel();
@@ -27,6 +27,8 @@ public class PlayerFormV2 extends PlayerFormV1 {
         textArea = new JTextArea("Thailand will face Oman at the Abdullah bin Khalifa Stadium in Doha, Qatar, on Sunday in their second match of the 2023 AFC Asian Cup, Group F.");
         textArea.setRows(3); //set row and column of textarea.
         textArea.setColumns(35);
+        textArea.setLineWrap(true);
+        textArea.setWrapStyleWord(true);
         typeLabel = new JLabel("Player Type:");
         scrollPane = new JScrollPane(textArea); //add textarea to scrollpane
     }
@@ -45,7 +47,7 @@ public class PlayerFormV2 extends PlayerFormV1 {
         });
     }
 
-    public void addComponents() {
+    protected void addComponents() {
         super.addComponents();
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS); //set scrollpane in vertical.
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER); //disable scrollpane in horizontal.
@@ -58,6 +60,7 @@ public class PlayerFormV2 extends PlayerFormV1 {
         tyPanel.add(typesCombo);
         typesCombo.setEditable(false); // Make the combo box non-editable
         typesCombo.setSelectedItem("Amateur"); // Set default type to "Amateur"
+        typesCombo.setPreferredSize(new Dimension(175,25));
         newtoPanel.setLayout(new BorderLayout());  //set and add components to newtoppanel.
         newtoPanel.add(toPanel, BorderLayout.NORTH);
         newtoPanel.add(bottomPanel, BorderLayout.CENTER);
@@ -70,4 +73,5 @@ public class PlayerFormV2 extends PlayerFormV1 {
         mainPanel.add(newbottomPanel, BorderLayout.CENTER);
         mainPanel.add(buttonPanel, BorderLayout.SOUTH);
     }
+    
 }

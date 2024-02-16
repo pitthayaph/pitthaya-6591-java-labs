@@ -25,7 +25,7 @@ public class MySimpleWindow extends JFrame {
         pack();
     }
 
-    public static void createAndShowGUI() { //change title and call method.
+    protected static void createAndShowGUI() { //change title and call method.
         MySimpleWindow msw = new MySimpleWindow("My Simple Window");
         msw.addComponents();
         msw.setFrameFeatures();
