@@ -26,6 +26,7 @@ public class PlayerFormV4 extends PlayerFormV3 {
         sportList.setSelectedIndex(2);
         yearSlider = new JSlider(0, 20, 0);
         yearSlider.setMajorTickSpacing(5);
+        yearSlider.setMinorTickSpacing(1);
         yearSlider.setPaintTicks(true);
         yearSlider.setPaintLabels(true);
     }
