@@ -10,19 +10,10 @@ public class PlayerFormV12 extends PlayerFormV11 {
 
     public PlayerFormV12(String title) {
         super(title);
+        
     }
 
-    // Override the method to handle text field changes
-    protected void handleTextField(JTextField tf) {
-        if (tf == birthDateField) {
-            handleDateTextField(tf);
-        } else if (tf == nameField) {
-            handleNameTextField();
-        } else if (tf == nationField) {
-            handleNationTextField();
-        }
-    }
-
+    
     // Method to handle name text field
     protected void handleNameTextField() {
         String input = nameField.getText().trim();
@@ -59,7 +50,7 @@ public class PlayerFormV12 extends PlayerFormV11 {
         String input = tf.getText().trim();
         try {
             if (input.isEmpty()) {
-                JOptionPane.showMessageDialog(this,"gukgoo")  ;
+                showMessageDialog("Please enter a valid date in Date of Birth");
             } else {
                 
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
@@ -96,37 +87,29 @@ public class PlayerFormV12 extends PlayerFormV11 {
         msw.enableKeyboard();
 
     }
-
-    @Override
-    protected void addListeners(){
-// Add action listener to nameField
-    nameField.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        handleTextField(nameField);
-    }
-});
-
-// Add action listener to nationField
-nationField.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        handleTextField(nationField);
-    }
-});
-
-// Add action listener to birthDateField
-birthDateField.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        handleTextField(birthDateField);
-    }
-});
-    }
-       
     
+    @Override
+    public void actionPerformed(ActionEvent e) { 
+        super.actionPerformed(e);
+        Object s = e.getSource();
+        if (s == nameField){
+            handleNameTextField();;
+        }
+        if (s == nationField){
+            handleNationTextField();;
+        }
+        if (s == birthDateField){
+           handleDateTextField(birthDateField);;
+
+        }
+
+
+
+    }
+
 
     @Override
     public void keyPressed(KeyEvent e) {
             
     }
 }
-
-
