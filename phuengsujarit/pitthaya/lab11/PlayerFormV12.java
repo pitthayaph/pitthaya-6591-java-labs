@@ -10,10 +10,9 @@ public class PlayerFormV12 extends PlayerFormV11 {
 
     public PlayerFormV12(String title) {
         super(title);
-        
+
     }
 
-    
     // Method to handle name text field
     protected void handleNameTextField() {
         String input = nameField.getText().trim();
@@ -21,8 +20,6 @@ public class PlayerFormV12 extends PlayerFormV11 {
             showMessageDialog("Please enter some data in Name");
             nameField.requestFocusInWindow();
             nationField.setEnabled(false);
-
-            
         } else {
             showMessageDialog("Name is changed to " + input);
             nationField.setEnabled(true);
@@ -52,7 +49,7 @@ public class PlayerFormV12 extends PlayerFormV11 {
             if (input.isEmpty()) {
                 showMessageDialog("Please enter a valid date in Date of Birth");
             } else {
-                
+
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
                 LocalDate date = LocalDate.parse(input, formatter);
                 // Date is in correct format
@@ -87,29 +84,27 @@ public class PlayerFormV12 extends PlayerFormV11 {
         msw.enableKeyboard();
 
     }
-    
+
     @Override
-    public void actionPerformed(ActionEvent e) { 
+    public void actionPerformed(ActionEvent e) {
         super.actionPerformed(e);
         Object s = e.getSource();
-        if (s == nameField){
-            handleNameTextField();;
+        if (s == nameField) {
+            handleNameTextField();
+            ;
         }
-        if (s == nationField){
-            handleNationTextField();;
+        if (s == nationField) {
+            handleNationTextField();
+            ;
         }
-        if (s == birthDateField){
-           handleDateTextField(birthDateField);;
-
+        if (s == birthDateField) {
+            handleDateTextField(birthDateField);
+            ;
         }
-
-
-
     }
-
 
     @Override
     public void keyPressed(KeyEvent e) {
-            
+
     }
 }
