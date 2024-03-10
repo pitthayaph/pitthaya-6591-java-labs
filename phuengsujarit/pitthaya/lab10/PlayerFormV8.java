@@ -4,7 +4,6 @@ import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.util.List;
-
 import phuengsujarit.pitthaya.lab9.PlayerFormV7;
 
 public class PlayerFormV8 extends PlayerFormV7 implements ListSelectionListener {
@@ -13,8 +12,6 @@ public class PlayerFormV8 extends PlayerFormV7 implements ListSelectionListener 
     public PlayerFormV8(String title) {
         super(title);
     }
-
-    
 
     @Override
     protected void addListeners() {
@@ -55,5 +52,3 @@ public class PlayerFormV8 extends PlayerFormV7 implements ListSelectionListener 
         });
     }
 }    
-
-

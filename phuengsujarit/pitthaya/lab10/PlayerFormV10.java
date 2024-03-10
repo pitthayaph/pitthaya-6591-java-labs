@@ -2,16 +2,9 @@ package phuengsujarit.pitthaya.lab10;
 
 import javax.swing.SwingUtilities;
 import javax.swing.JOptionPane;
-import javax.swing.JSlider;
-import javax.swing.SwingUtilities;
-import javax.swing.event.*;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
-import java.util.List;
-
-
 
 public class PlayerFormV10 extends PlayerFormV9 {
 
@@ -107,6 +100,4 @@ public class PlayerFormV10 extends PlayerFormV9 {
         Font boldFont = new Font("Serif", Font.BOLD, size);
         noteText.setFont(boldFont);
     }
-
-    
 }

@@ -18,8 +18,6 @@ public class PlayerFormV9 extends PlayerFormV8 implements ChangeListener{
         msw.addListeners();
     }
 
-    
-
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
@@ -28,9 +26,7 @@ public class PlayerFormV9 extends PlayerFormV8 implements ChangeListener{
         });
     }
 
-   
-
-    @Override
+       @Override
     protected void addListeners(){
         super.addListeners();
         yearSlider.addChangeListener(this);
@@ -41,10 +37,6 @@ public class PlayerFormV9 extends PlayerFormV8 implements ChangeListener{
         if (!source.getValueIsAdjusting()) {
             int value = source.getValue();
             JOptionPane.showMessageDialog(this, "Year of experience in this sport is " + value);
-
-            
         }
-
-
     }
 }
