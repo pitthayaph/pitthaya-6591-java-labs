@@ -1,0 +1,2 @@
+data.txt
+Pitthaya has nationnality as Phuengsujarit and was born on 07-11-2004, has gender as Female, is a Beginner, has hobbies  as Reading Sleeping and plays [Badminton, Boxing, Football]
